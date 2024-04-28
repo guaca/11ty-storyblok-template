@@ -68,7 +68,8 @@ font-size: 1em;
 }
 }
 .author-avatar {
-  width: 75px;
+  height: 90px;
+  width: 90px;
 }
 .author-name {
   margin-left: 1.5em;
