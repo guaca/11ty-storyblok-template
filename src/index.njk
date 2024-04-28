@@ -1,0 +1,24 @@
+---
+pagination:
+    data: home
+    size: 1
+permalink: "/"
+layout: layouts/base.njk
+eleventyComputed: 
+    title: "{{ home.content.SEO[0].title }}"
+    description: "{{ home.content.SEO[0].description }}"
+    canonical: "{{ home.content.SEO[0].canonical }}"
+    noindex: "{{ home.content.SEO[0].noindex }}"
+    og_title: "{{ home.content.SEO[0].og_title }}"
+    og_description: "{{ home.content.SEO[0].og_description }}"
+    og_image: "{{ home.content.SEO[0].og_image.filename }}"
+---
+<h1>{{ home.content.Heading }}</h1>
+<p class="home-subtitle">{{ home.content.Subtitle }}</p>
+
+<h2>Highlighted Articles</h2>
+<ul>
+    {% for article in home.content.Highlights %}
+    <li><a href={{ article.fullSlug }}>{{ article.content.Title }}</a></li>
+    {% endfor %}
+</ul>

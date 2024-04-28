@@ -1,0 +1,14 @@
+---
+permalink: "/categories/"
+layout: layouts/base.njk
+title: "Categories"
+description: "This is the list of Categories"
+---
+<div>
+    <h1>Categories</h1>
+    <ul>
+        {% for category in categories %}
+        <li><a href="/{{ category.full_slug }}">{{ category.content.Category }}</a></li>
+        {% endfor %}
+    </ul>
+</div>

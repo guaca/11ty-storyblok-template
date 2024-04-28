@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html lang="{{ metadata.language }}">
+{% include "head.njk" %}
+<body>
+  {% include "header.njk" %}
+  <main style="flex-grow:1;">
+    {{ content | safe }}
+  </main>
+  {% include "footer.njk" %}
+</body>
+</html>

@@ -1,0 +1,41 @@
+---
+pagination:
+    data: authors
+    size: 1
+    alias: author
+permalink: "{{ author.full_slug }}/"
+layout: layouts/base.njk
+eleventyComputed: 
+    title: "{{ author.content.SEO[0].title }}"
+    description: "{{ author.content.SEO[0].description }}"
+    canonical: "{{ author.content.SEO[0].canonical }}"
+    noindex: "{{ author.content.SEO[0].noindex }}"
+    og_title: "{{ author.content.SEO[0].og_title }}"
+    og_description: "{{ author.content.SEO[0].og_description }}"
+    og_image: "{{ author.content.SEO[0].og_image.filename }}"
+---
+
+<div>
+    <div class="author-info">
+        <img class="author-avatar" src="{{ author.content.Avatar.filename }}">
+        <h1 class="author-name">{{ author.content.Name }}</h1>
+    </div>
+        <p>{{ author.content.Bio }}</p>
+    <h2>Articles by {{ author.content.Name }}</h2>
+    
+    {% set targetAuthorFullSlug = author.full_slug %}
+    {% set filteredArticles = articles | filterArticlesByAuthor(targetAuthorFullSlug) %}
+    <ul>
+        {% for article in filteredArticles %}
+            <li>
+                <article>
+                    <h3><a href="/{{ article.full_slug }}">{{ article.content.Title }}</a></h3>
+                    <span>Publication Date: {{ article.content.PublicationDate }}</span>
+                </article>
+            </li>
+        {% else %}
+            <p>No articles found for this author.</p>
+        {% endfor %}
+    </ul>
+
+</div>

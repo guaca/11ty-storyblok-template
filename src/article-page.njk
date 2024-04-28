@@ -1,0 +1,27 @@
+---
+pagination:
+    data: articles
+    size: 1
+    alias: article
+permalink: "{{ article.full_slug }}/"
+layout: layouts/base.njk
+templateEngineOverride: njk,md
+eleventyComputed: 
+    title: "{{ article.content.SEO[0].title }}"
+    description: "{{ article.content.SEO[0].description }}"
+    canonical: "{{ article.content.SEO[0].canonical }}"
+    noindex: "{{ article.content.SEO[0].noindex }}"
+    og_title: "{{ article.content.SEO[0].og_title }}"
+    og_description: "{{ article.content.SEO[0].og_description }}"
+    og_image: "{{ article.content.SEO[0].og_image.filename }}"
+---
+<article>
+    <h1>{{ article.content.Title }}</h1>
+    <a href="/{{ article.content.Author.fullSlug }}">{{ article.content.Author.name }}</a>
+    <span> - </span>
+    <a href="/{{ article.content.Category.fullSlug }}">{{ article.content.Category.name }}</a>
+    <p>{{ article.content.PublicationDate }}</p>
+    <div>
+        {{ article.content.Body | safe }}
+    </div>
+</article>

@@ -1,0 +1,82 @@
+/* Colors */
+:root {
+  --darkgray: #202124;
+  --purple: #713973;
+  --white: #FFF;
+}
+body {
+background-color: var(--white);
+color: var(--darkgray);
+display: flex;
+flex-direction: column;  
+font-family: system,-apple-system,system-ui,BlinkMacSystemFont,Roboto-Light,sans-serif;
+font-size: clamp(1.1em, calc(0.25vw + 0.8em), 1.25em);
+margin: 0;
+min-height: 100vh;
+padding: 0;
+}
+header {
+display: flex;
+justify-content: space-between;
+border-bottom: 1px solid var(--darkgray);
+}
+footer {
+border-top: 1px solid var(--darkgray);
+text-align: center;
+padding: 1em;
+}
+main {
+flex-grow: 1;
+margin: 4em auto 0 auto;
+width: min(60em, 90%);
+}
+.header-home {
+text-decoration: none;
+font-size: 1.5em;
+font-weight: 600;
+color: var(--darkgray);
+&:hover {
+    color: var(--purple);
+}
+}
+.header-nav {
+display: flex;
+align-items: center;
+width: min(60em, 90%);
+margin: 0 auto;
+}
+.header-list {
+margin-right: 1em;
+padding: 0;
+list-style: none;
+float: left;
+margin-left: 1em;
+display: flex;
+justify-content: flex-end;
+flex-grow: 1;
+list-style: none;
+}
+.header-item {
+font-size: 1em;
+& a {
+    margin: 0 1em;
+    color: var(--darkgray);
+    text-decoration: none;
+    &:hover {
+        color: var(--purple);
+    }
+}
+}
+.author-avatar {
+  width: 75px;
+}
+.author-name {
+  margin-left: 1.5em;
+}
+.author-info {
+  display: flex;
+  flex-direction: row;
+}
+p:empty {
+display: none;
+}

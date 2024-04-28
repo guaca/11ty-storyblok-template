@@ -1,0 +1,14 @@
+---
+permalink: "/authors/"
+layout: layouts/base.njk
+title: "Authors"
+description: "This is the list of Authors"
+---
+<div>
+    <h1>Authors</h1>
+    <ul>
+        {% for author in authors | sortAuthorsByName %}
+        <li><a href="/{{ author.full_slug }}">{{ author.content.Name }}</a></li>
+        {% endfor %}
+    </ul>
+</div>

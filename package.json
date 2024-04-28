@@ -1,0 +1,26 @@
+{
+  "name": "11ty-storyblok-template",
+  "version": "1.0.0",
+  "description": "A starter repository for a blog web site using Eleventy and Storyblok",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/guaca/11ty-storyblok-template/"
+  },
+  "author": {
+    "name": "Estela Franco",
+    "email": "estela@estelafranco.com",
+    "url": "https://estelafranco.com"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/guaca/11ty-storyblok-template/issues"
+  },
+  "scripts": {
+    "build": "npx @11ty/eleventy",
+    "start": "npx @11ty/eleventy --serve"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^2.0.1",
+    "dotenv": "^16.4.1"
+  }
+}
