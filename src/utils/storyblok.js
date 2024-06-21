@@ -6,7 +6,7 @@ module.exports = async function fetchAPI(query, { variables, preview } = {}) {
       headers: {
         "Content-Type": "application/json",
         Token: process.env.STORYBLOK_API_KEY,
-        Version: "draft",
+        Version: process.env.VERSION,
       },
       body: JSON.stringify({
         query,
