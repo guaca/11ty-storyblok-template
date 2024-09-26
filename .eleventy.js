@@ -1,5 +1,13 @@
 require('dotenv').config()
+const markdownIt = require("markdown-it");
 module.exports = function (eleventyConfig) {
+  // Add markdownIt
+  const md = new markdownIt({
+    html: true,
+  });
+  eleventyConfig.addFilter("markdown", (content) => {
+    return md.render(content);
+  });
   // Add the .env domain as GlobalData to use in SEO meta data
   eleventyConfig.addGlobalData("domain", process.env.DOMAIN );
   // Add the current year ad GlobalData to use in the footer 

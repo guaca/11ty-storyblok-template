@@ -22,6 +22,6 @@ eleventyComputed:
     <a href="/{{ article.content.Category.fullSlug }}">{{ article.content.Category.name }}</a>
     <p>{{ article.content.PublicationDate }}</p>
     <div>
-        {{ article.content.Body | safe }}
+        {{ article.content.Body | markdown | safe }}
     </div>
 </article>
